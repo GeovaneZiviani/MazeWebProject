@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<grammars xmlns="http://wadl.dev.java.net/2009/02" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xi="http://www.w3.org/1999/XML/xinclude">
+
+	<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+		<xs:element name="player" type="player" />
+
+		<xs:element name="players" type="players" />
+
+		<xs:complexType name="players">
+			<xs:sequence>
+				<xs:element name="link" type="jaxbLink" minOccurs="0"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:complexType name="jaxbLink">
+			<xs:sequence />
+			<xs:attribute name="href" type="xs:string" />
+			<xs:anyAttribute namespace="##other" processContents="skip" />
+		</xs:complexType>
+		
+		<xs:complexType name="game">
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" minOccurs="0" />
+				<xs:element name="type" type="xs:type" minOccurs="0" />
+				<xs:element name="scores" type="xs:score" minOccurs="0" />
+				
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:complexType name="player">
+			<xs:sequence>
+				<xs:element name="nickname" type="xs:string" minOccurs="0" />
+				<xs:element name="score" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+		
+			<xs:complexType name="score">
+			<xs:sequence>
+				<xs:element name="player" type="xs:player" minOccurs="0" />
+				<xs:element name="game" type="xs:game" minOccurs="0" />	
+			</xs:sequence>
+		</xs:complexType>
+		
+		
+		<xs:simpleType name="type" minOccurs="0">
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="PUZZLE" />
+				<xs:enumeration value="FPS" />
+				<xs:enumeration value="MAZE" />
+				<xs:enumeration value="STRAGY" />
+				<xs:enumeration value="RPG" />
+			</xs:restriction>
+		</xs:simpleType>
+		
+	</xs:schema>
+
+
+</grammars>

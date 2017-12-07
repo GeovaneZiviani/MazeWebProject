@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resourceDoc>
+	<classDocs>
+		<classDoc>
+			<className>br.org.catolicasc.geovane.maze.services</className>
+			<commentText><![CDATA[Management all system players.]]>
+			</commentText>
+			<methodDocs>
+				<methodDoc>
+					<methodName>listAllPlayers</methodName>
+					<commentText><![CDATA[List all system players]]></commentText>
+					
+					<responseDoc>						
+						<representations>
+							<representation element="players" status="200"
+								mediaType="text/xml,application/xml,application/json">								
+								<doc></doc>
+							</representation>
+						</representations>
+					</responseDoc>
+				</methodDoc>
+				<methodDoc>
+					<methodName>findPlayer</methodName>
+					<commentText><![CDATA[Finds a particular one particle player]]></commentText>
+					<responseDoc>						
+						<representations>
+							<representation element="player" status="200"
+								mediaType="text/xml,application/xml,application/json">								
+								<doc></doc>
+							</representation>
+							<representation status="404">
+								<doc>404 not found.</doc>
+							</representation>
+						</representations>
+					</responseDoc>
+				</methodDoc>
+			</methodDocs>
+		</classDoc>		
+	</classDocs>
+</resourceDoc>
