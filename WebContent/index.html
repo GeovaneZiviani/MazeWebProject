@@ -2,108 +2,94 @@
 <html>
 
 <head>
-    <title> Maze Runner</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/maze.css">
-    <link rel="stylesheet" type="text/css" href="css/modal.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<title>Maze Runner</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/maze.css">
+<link rel="stylesheet" type="text/css" href="css/modal.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <div class="panel panel-primary">
-            <h2> Maze Runner </h2> 
-            <p>
-                Welcome!
-                <br /> This is a HTML5 Maze Game created by
-                <a href="http://www.codeproject.com/script/Membership/Views.aspx?mid=8966127">ProgramFOX</a>.
-            </p>
-            <form>
-                <div class="container" id="img-maze">
-                    <img src="img-maze/maze.png" />
-                </div>
+	<div class="container">
+		<div class="panel panel-primary">
+			<h2>Maze Runner</h2>
+			<p>
+				Welcome! <br /> This is a HTML5 Maze Game created by <a
+					href="http://www.codeproject.com/script/Membership/Views.aspx?mid=8966127">ProgramFOX</a>.
+			</p>
+			<form>
+				<div class="container" id="img-maze">
+					<img src="img-maze/maze.png" />
+				</div>
 
-            </form>
+			</form>
 
-            <div class="container">
-                <canvas width="616" height="556" id="mazecanvas" class="canvas" hidden>Can't load the maze game, because your browser doesn't support HTML5.</canvas>
-            </div>
-            <br>
-            <section>
-                <div class="content" id="game-panel">
-                    <button type="button" id="play" value="Salvar">Start</button>
-                </div>
-            </section>
-            <div class="panel panel-default">
-                <div class="panel-heading">Score</div>
-                <table id="grid" class="table">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Nickname</th>
-                            <th>Score</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
+			<div class="container">
+				<canvas width="616" height="556" id="mazecanvas" class="canvas"
+					hidden>Can't load the maze game, because your browser doesn't support HTML5.</canvas>
+			</div>
+			<br>
+			<section>
+				<div class="container" id="game-panel">
+					<button type="button" id="play" value="Salvar">Start</button>
+				</div>
+			</section>
+			<div class="panel panel-default">
+				<div class="panel-heading">Score</div>
+				<table id="grid" class="table">
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>Nickname</th>
+							<th>Score</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
 
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <form id="form-adiciona">
-                        <section class="container">
-                            <div class="form-group">
-                                <label for="nome">Nickname:</label>
-                                
-                                <input name="nickName" type="text" placeholder="insert your nickname" class="campo-medio" />
-                                <label>You Score</label>
-                                <input name="score" type="text" id="score" class="campo-medio" readonly="readonly" />
-                            </div>
-                        </section>
-                        <div class="btn-block btn-group">
-                            <input type="button" class="btn btn-primary"  value="Salvar" onclick="addPlayer();" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-            
-             <div id="editModal" class="modal">
-                <div class="modal-content">
-                    <form id="form-edita">
-                        <section class="container">
-                            <div class="form-group">
-                                <label for="nome">Nickname:</label>
-                                <input name="nickName" type="text" placeholder="insert your nickname" class="campo-medio" />
-                            </div>
-                        </section>
-                        <div class="btn-block btn-group">
-                           <input type="button" id ="editPlayer" class="btn btn-primary"  value="Salvar" onclick= "loadingPlyer(\'' + player.nickName + '\');"/>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    
-    <script src="js/build-maze.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script src="js/json.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/rest-funtions.js" type="text/javascript"></script>
-    <script src="js/score.js" type="text/javascript"></script>
-    
-    <script type="text/javascript">
-        listPlayers();
-        sortTheTable();
-    </script>
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<form id="form-adiciona">
+						<section class="container">
+							<div class="form-group">
+								<label for="nome">Nickname:</label> <input name="nickName"
+									type="text" placeholder="insert your nickname"
+									class="campo-medio" /> <label>You Score</label> <input
+									name="score" type="text" id="score" class="campo-medio"
+									readonly="readonly" />
+							</div>
+						</section>
+						<div class="btn-block btn-group">
+							<input type="button" class="btn btn-primary" value="Salvar"
+								onclick="addPlayer();" />
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<script src="js/build-maze.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/json.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/rest-funtions.js" type="text/javascript"></script>
+	<script src="js/score.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		listPlayers();
+		sortTheTable();
+	</script>
 </body>
 
 </html>
